@@ -1,0 +1,38 @@
+
+<suite name="CrossBrowserTesting" verbose="1" parallel="tests"
+       thread-count="2">
+
+    <parameter name = "environment" value = "SauceLabs"/>
+    <parameter/>
+
+    <test name="SC-Chrome">
+        <classes>
+            <parameter name="browser" value="chrome"/>
+            <parameter name="platform" value="Linux"/>
+            <parameter name="version" value="51.0"/>
+            <class name="com.booking.testing.page.homepage.com.booking.testing.page.homepage.HomePageTest"/>
+        </classes>
+    </test>
+
+
+    <test name="SC-Edge">
+        <parameter name="browser" value="edge"/>
+        <parameter name="platform" value="Windows 7"/>
+        <classes>
+            <class name="com.booking.testing.page.homepage.com.booking.testing.page.homepage.HomePageTest"/>
+        </classes>
+    </test>
+
+
+    <test name="SC-Edge">
+        <parameter name="browser" value="firefox"/>
+        <parameter name="platform" value="macOS 10.13"/>
+        <parameter name="version" value="9"/>
+        <classes>
+            <class name="com.booking.testing.page.homepage.com.booking.testing.page.homepage.HomePageTest"/>
+        </classes>
+    </test>
+
+
+
+</suite>

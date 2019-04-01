@@ -1,0 +1,49 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="CrossBrowserTesting" verbose="1" parallel="tests"
+       thread-count="2">
+
+    <listeners>
+        <listener class-name="com.booking.testing.listener.com.booking.testing.listener.TestListener"/>
+    </listeners>
+
+
+
+    <test name="HomePageTest-Chrome">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.booking.testing.page.homepage.com.booking.testing.page.homepage.HomePageTest">
+                <methods>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="HomePageTest-PhantomJS">
+        <parameter name="browser" value="phantomjs"/>
+        <classes>
+            <class name="com.booking.testing.page.homepage.com.booking.testing.page.homepage.HomePageTest">
+                <methods>
+                <exclude name="nonDisplayedPromoImgs"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="HomePageTest-Edge">
+        <parameter name="browser" value="edge"/>
+        <classes>
+            <class name="com.booking.testing.page.homepage.com.booking.testing.page.homepage.HomePageTest">
+                <methods>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+
+</suite>

@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="check" verbose="1" parallel="tests"
+       thread-count="1">
+
+
+
+    <test name="HomePageTest-Chrome">
+        <parameter name="browser" value="CHROME"/>
+        <classes>
+
+
+                <class name="com.booking.testing.page.homepage.com.booking.testing.page.homepage.HomePageTest">
+            <methods>
+                <include name="check"/>
+            </methods></class>
+        </classes>
+    </test>
+
+
+
+</suite>
