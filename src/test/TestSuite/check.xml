@@ -8,11 +8,9 @@
     <test name="HomePageTest-Chrome">
         <parameter name="browser" value="CHROME"/>
         <classes>
-
-
-                <class name="com.booking.testing.page.homepage.com.booking.testing.page.homepage.HomePageTest">
+                <class name="com.booking.testing.page.HomePageTest">
             <methods>
-                <include name="check"/>
+                <include name="searchAccommodatione2eTest"/>
             </methods></class>
         </classes>
     </test>

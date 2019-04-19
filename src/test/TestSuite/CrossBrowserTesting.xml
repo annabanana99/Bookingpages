@@ -4,15 +4,16 @@
        thread-count="2">
 
     <listeners>
-        <listener class-name="com.booking.testing.listener.com.booking.testing.listener.TestListener"/>
+        <listener class-name="com.booking.testing.listener.TestListener"/>
     </listeners>
 
 
-
     <test name="HomePageTest-Chrome">
-        <parameter name="browser" value="chrome"/>
+        <parameter name="browser" value="CHROME"/>
+        <parameter name="environment" value="SauceLabs"/>
+        <parameter name="platform" value="Linux"/>
         <classes>
-            <class name="com.booking.testing.page.homepage.com.booking.testing.page.homepage.HomePageTest">
+            <class name="com.booking.testing.page.HomePageTest">
                 <methods>
 
                 </methods>
@@ -22,11 +23,13 @@
 
 
     <test name="HomePageTest-PhantomJS">
-        <parameter name="browser" value="phantomjs"/>
+        <parameter name="browser" value="PHANTOMJS"/>
+        <parameter name="platform" value="Windows 10"/>
+        <parameter name="environment" value="SauceLabs"/>
         <classes>
-            <class name="com.booking.testing.page.homepage.com.booking.testing.page.homepage.HomePageTest">
+            <class name="com.booking.testing.page.HomePageTest">
                 <methods>
-                <exclude name="nonDisplayedPromoImgs"/>
+                    <exclude name="nonDisplayedPromoImgs"/>
                 </methods>
             </class>
         </classes>
@@ -34,16 +37,17 @@
 
 
     <test name="HomePageTest-Edge">
-        <parameter name="browser" value="edge"/>
+        <parameter name="browser" value="EDGE"/>
+        <parameter name="environment" value="SauceLabs"/>
+        <parameter name="platform" value="Windows 8"/>
         <classes>
-            <class name="com.booking.testing.page.homepage.com.booking.testing.page.homepage.HomePageTest">
+            <class name="com.booking.testing.page.HomePageTest">
                 <methods>
 
                 </methods>
             </class>
         </classes>
     </test>
-
 
 
 </suite>

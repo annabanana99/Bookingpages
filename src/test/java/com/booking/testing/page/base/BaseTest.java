@@ -1,17 +1,13 @@
-package com.booking.testing.page.base.com.booking.testing.page.base;
+package com.booking.testing.page.base;
 
-import testing.driver.booking.testing.driver.DriverFactory;
-import testing.entity.WebBrowser;
+import com.booking.testing.driver.DriverFactory;
+import com.booking.testing.entity.WebBrowser;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
-
+import org.testng.annotations.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -27,7 +23,7 @@ public class BaseTest {
         FileUtils.copyFile(scrFile, new File(filePath));
     }
 
-    @BeforeMethod(alwaysRun = true)
+    @BeforeTest(alwaysRun = true)
     @Parameters({"browser", "environment", "platform"})
     protected void setUp(@Optional("CHROME") WebBrowser browser, @Optional("local") String environment, ITestContext context,
                          @Optional("Windows 10") String platform) throws Exception {
@@ -40,12 +36,12 @@ public class BaseTest {
         } else {
             driver = factory.getDriver();
         }
-
         driver.manage().window().maximize();
     }
 
-    @AfterMethod(alwaysRun = true)
-    protected void tearDown() {
+    @AfterTest(alwaysRun = true)
+    protected void tearDown() throws IOException {
         driver.close();
+        Runtime.getRuntime().exec("taskkill /im chromedriver.exe /f");
     }
 }

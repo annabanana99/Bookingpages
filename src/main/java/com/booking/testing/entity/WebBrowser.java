@@ -1,4 +1,4 @@
-package testing.entity;
+package com.booking.testing.entity;
 
 public enum WebBrowser {
     CHROME("chrome"),

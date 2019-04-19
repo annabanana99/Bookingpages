@@ -1,5 +1,4 @@
-package testing.listener.com.booking.testing.listener;
-
+package com.booking.testing.listener;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.testng.ITestContext;

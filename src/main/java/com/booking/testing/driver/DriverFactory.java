@@ -1,6 +1,5 @@
-package testing.driver.booking.testing.driver;
+package com.booking.testing.driver;
 
-import testing.entity.WebBrowser;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -13,6 +12,7 @@ import org.openqa.selenium.phantomjs.PhantomJSDriverService;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import com.booking.testing.entity.WebBrowser;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -65,9 +65,10 @@ public class DriverFactory {
 
 
     public WebDriver getSauceDriver(String platform, String name) {
-        String user = "anna";
-        String key = "";
-        String sauceUrl = "http://" + user + ":" + key + "@ondemand.saucelabs:80/wd/hub";
+        //https://wiki.saucelabs.com/display/DOCS/Java+Test+Setup+Example
+        String user = "booking_project";
+        String key = "f52cc90b-6273-4935-a916-c7eb9b0d31f4";
+        String sauceUrl = "http://" + user + ":" + key + "@ondemand.eu-central-1.saucelabs.com/wd/hub;"; //"@ondemand.saucelabs:80/wd/hub";
 
         DesiredCapabilities desCaps = new DesiredCapabilities();
         desCaps.setCapability(TEST_BROWSER_NAME, "browser");
