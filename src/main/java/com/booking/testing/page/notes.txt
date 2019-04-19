@@ -1,0 +1,17 @@
+Cleanup:
+
+- Explain driver.get() in DriverFactory
+- HomePage - guests selection
+- HomePageTest - finish the remaining tests
+- Sauce labs configuration - correct it
+- Taking screenshots for sauce, parhaps other functionalities?
+- Listeners
+- Logging
+- clean up promo imgs url. duplicate imgs.size != 0?
+- tearDown - add conditions for non-chrome.exe
+
+Done:
+- HomePageTest - calendar valid days
+- Thread.sleep in SignInPage and SignInTest
+- SignInPage - signedInTest - correct it
+- Before and AfterMethod removal
